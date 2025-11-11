@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Tambah Transaksi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Tambah Transaksi</h2>
+
+    <form method="post">
+        <label>Tipe:</label>
+        <select name="tipe" required>
+            <option value="pemasukan">Pemasukan</option>
+            <option value="pengeluaran">Pengeluaran</option>
+        </select>
+
+        <label>Jumlah (Rp):</label>
+        <input type="number" name="jumlah" step="0.01" required>
+
+        <label>Kategori:</label>
+        <input type="text" name="kategori" required>
+
+        <label>Catatan:</label>
+        <input type="text" name="catatan">
+
+        <button type="submit">Simpan</button>
+    </form>
+
+    <a href="{{ url_for('index') }}">⬅ Kembali</a>
+</body>
+</html>
