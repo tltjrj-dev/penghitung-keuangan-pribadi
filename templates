@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Keuangan Pribadi</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>💰 Aplikasi Keuangan Pribadi</h1>
+
+    <div class="saldo">
+        <p><strong>Saldo:</strong> Rp {{ "{:,.0f}".format(saldo) }}</p>
+        <a href="{{ url_for('tambah') }}">+ Tambah Transaksi</a>
+    </div>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Tipe</th>
+            <th>Jumlah</th>
+            <th>Kategori</th>
+            <th>Catatan</th>
+            <th>Aksi</th>
+        </tr>
+        {% for t in transaksi %}
+        <tr class="{{ t.tipe }}">
+            <td>{{ t.id }}</td>
+            <td>{{ t.tipe }}</td>
+            <td>Rp {{ "{:,.0f}".format(t.jumlah) }}</td>
+            <td>{{ t.kategori }}</td>
+            <td>{{ t.catatan }}</td>
+            <td><a href="{{ url_for('hapus', id=t.id) }}" onclick="return confirm('Hapus transaksi ini?')">🗑 Hapus</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
