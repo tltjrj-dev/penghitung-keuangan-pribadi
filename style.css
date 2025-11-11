@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 30px;
+    background: #f7f7f7;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+tr.pemasukan {
+    background-color: #e8f5e9;
+}
+
+tr.pengeluaran {
+    background-color: #ffebee;
+}
+
+.saldo {
+    background: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
